@@ -45,7 +45,7 @@ int stringLength(char * input){
  * set the value that pointer2 points to to '\0'
  */
 
-void stringNCopy(char * in, char * out){
+void stringNCopy(char * out, char * in){
 	char * point = in;
 	char * point2 = out;
 
@@ -196,7 +196,7 @@ int main(){
 			cout << "Enter a string to copy:" ;
 			cin >> input;
 
-			stringNCopy(input, output);
+			stringNCopy(output, input);
 
 			cout << "The copied string: " << output << endl;
 
