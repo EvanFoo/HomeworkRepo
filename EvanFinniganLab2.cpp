@@ -6,6 +6,7 @@
 
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -84,6 +85,8 @@ void stringAdd(char * destination, char * toAdd){
 		point++;
 		point2++;
 	}
+
+	* point = '\0';
 }
 
 /*Psudocode for stringCompare:
@@ -184,7 +187,8 @@ int main(){
 		if(choice == 1){
 			char input[100];
 			cout << "Enter a string to find the length of: ";
-			cin >> input;
+			cin.ignore();
+			cin.getline(input, 100);
 			cout << endl;
 
 			cout << "The lengh of your string is " << stringLength(input) << endl;
@@ -194,7 +198,8 @@ int main(){
 			char output[100];
 
 			cout << "Enter a string to copy:" ;
-			cin >> input;
+			cin.ignore();
+			cin.getline(input, 100);
 
 			stringNCopy(output, input);
 
@@ -205,11 +210,12 @@ int main(){
 			char toAdd[100];
 
 			cout << "Enter your base string: ";
-			cin >> base;
+			cin.ignore();
+			cin.getline(base, 100);
 			cout << endl;
 
 			cout << "Enter a string to add: ";
-			cin >> toAdd;
+			cin.getline(toAdd, 100);
 			cout << endl;
 
 			stringAdd(base, toAdd);
@@ -221,19 +227,20 @@ int main(){
 			int comparison;
 
 			cout << "Enter your first string: ";
-			cin >> string1;
+			cin.ignore();
+			cin.getline(string1, 100);
 			cout << endl;
 
 			cout << "Enter your second string: ";
-			cin >> string2;
+			cin.getline(string2, 100);
 			cout << endl;
 
 			comparison = stringCompare(string1, string2);
 
 			if(comparison == 1){
-				cout << "String two is first in the dictionary" << endl;
+				cout << "String two would be ordered ahead of string one" << endl;
 			}else if(comparison == -1 ){
-				cout << "String one is first in the dictionary" << endl;
+				cout << "String one would be ordered ahead of string two" << endl;
 			}else if(comparison == 0){
 				cout << "String one and string two have the same value" << endl;
 			}
