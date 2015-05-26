@@ -8,10 +8,20 @@
 #include "ShiftSupervisor.h"
 #include <iomanip>
 
+/*
+ * set the name equal to a blank space
+ */
 ShiftSupervisor::ShiftSupervisor() {
     setName(" ");
 };
 
+/*
+ * call the set name function with input name as the argument
+ * call the set number function with the input number as the argument
+ * call the set hire date function with the input date as the argument
+ * set the salary equal to the input salary
+ * set the bonus equal to the input bonus
+ */
 ShiftSupervisor::ShiftSupervisor(char * inputName, int inputNumber, int inputDate, double inputSalary, double inputBonus){
     setName(inputName);
     setNumber(inputNumber);
@@ -34,9 +44,13 @@ void ShiftSupervisor::setBonus(double inputBonus){
     bonus = inputBonus;
 };
 
-ShiftSupervisor::~ShiftSupervisor() {
-}
-
+/*
+ * display the name
+ * display the number
+ * display the hire date
+ * display the salary
+ * display the monthly bonus
+ */
 void ShiftSupervisor::displayInfo(){
     std::cout << std::setw(30) << std::left << "Name" << std::setw(20) << getName() << std::endl;
     std::cout << std::setw(30) << "Employee Number" << std::setw(20) << getNumber()<< std::endl;

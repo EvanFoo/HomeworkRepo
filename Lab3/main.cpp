@@ -7,6 +7,73 @@
 
 using namespace std;
 
+/*
+ Psudocode for Main:
+ * Enter a number of employees for a company
+ * 
+ * do
+ *      display "1. Create basic employee data"
+ *      display "2. Create production worker data"
+ *      display "3. Create shift supervisor data"
+ *      display "4. Create team leader data"
+ *      display "5. Display all employees"
+ *      display "6. quit" 
+ * 
+ *      enter a choice
+ *      
+ *      if the choice is 1
+ *          enter a name
+ *          enter an employee number
+ *          enter a hire date
+ * 
+ *          create a new employee object with name, employee number, and hire date
+ *          save the new employee in the company array
+ * 
+ *          increment the global counter
+ * 
+ *      if the choice is 2
+ *          enter a name
+ *          enter an employee number
+ *          enter a hire date
+ *          enter a shift
+ *          enter a salary
+ * 
+ *          create a new production worker object with name, employee number, hire date, shift and salary
+ *          save the production worker in the company array
+ 
+ *          increment the global counter
+ * 
+ *      if the choice is 3
+ *          enter a name
+ *          enter an employee number
+ *          enter a hire date
+ *          enter a salary 
+ *          enter a bonus
+ * 
+ *          create a new shift supervisor object with name, employee number, hire date, salary, bonus
+ *          save the shift supervisor in the company array
+ * 
+ *          increment the global counter
+ * 
+ *      if the choice is 4
+ *          enter a name
+ *          enter an employee number
+ *          enter a hire date
+ *          enter a pay rate 
+ *          enter a bonus
+ *          enter a required training hours
+ *          enter a completed training hours
+ * 
+ *          create a new team leader object with name, employee number, hire date, pay rate, bonus, required training hours, completed training hours
+ *          save the team leader in the company array
+ * 
+ *          increment the global counter
+ *      if the choice is 5
+ *          for a counter i less than the global counter
+ *              call the display info method for the member of the company array at location i
+ * while the flag is not equal to 6
+ */
+
 int main(int argc, char** argv) {
     int numberOfEmployees;
     Employee ** company;
@@ -119,7 +186,7 @@ int main(int argc, char** argv) {
                 counter ++;
                 break;
             case 5:
-                for(int i = 0; i < numberOfEmployees; i++){
+                for(int i = 0; i < counter; i++){
                     company[i]->displayInfo();
                 };
         }
